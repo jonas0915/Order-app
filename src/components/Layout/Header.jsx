@@ -9,7 +9,8 @@ const Header = (props) => {
     <React.Fragment>
       <header className={classes.header}>
         <h1>OurMeals</h1>
-        <HeaderCardButton />
+        {/* recieved onShowCart prop from App.jsx */}
+        <HeaderCardButton onClick={props.onShowCart} />
       </header>
       {/* use brackets when classname has a dash */}
       <div className={classes["main-image"]}>
