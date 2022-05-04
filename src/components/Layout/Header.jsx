@@ -2,7 +2,7 @@ import React from "react";
 import HeaderCardButton from "./HeaderCardButton";
 import classes from "./Header.module.css";
 
-import mealsImage from "../../assets/meals.jpg";
+import mealsImage from "../../assets/in-situ2.png";
 
 const Header = (props) => {
   return (
