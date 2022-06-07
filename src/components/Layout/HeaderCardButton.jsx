@@ -6,7 +6,7 @@ import classes from "./HeaderCardButton.module.css";
 const HeaderCardButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
 
-  // Contex
+  // Context
   const cartCtx = useContext(CartContext);
   // Object Destructing to pull-out items off the cart
   const { items } = cartCtx;
@@ -21,7 +21,7 @@ const HeaderCardButton = (props) => {
   }`;
 
   useEffect(() => {
-    // if this is true, it will just retur & the rest of the fnctn won't execute
+    // if this is true, it will just return & the rest of the fnctn won't execute
     if (items.length === 0) {
       return;
     }

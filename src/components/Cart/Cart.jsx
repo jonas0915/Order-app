@@ -3,9 +3,11 @@ import Modal from "../UI/Modal";
 import CartContext from "../../Store/cart-context";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
+// import CheckOut from "../Checkout/CheckOut";
 
 const Cart = (props) => {
   // imported from cart-context.jsx
+  // useContext is used to get the value from the React.
   const cartCtx = useContext(CartContext);
 
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
@@ -37,19 +39,26 @@ const Cart = (props) => {
   );
 
   return (
-    <Modal onClose={props.onClose}>
-      {cartItems}
-      <div className={classes.total}>
-        <span>Total Amount</span>
-        <span>{totalAmount}</span>
-      </div>
-      <div className={classes.actions}>
-        <button className={classes["button--alt"]} onClick={props.onClose}>
-          Close
-        </button>
-        {hasItems && <button className={classes.button}>Order</button>}
-      </div>
-    </Modal>
+    <React.Fragment>
+      <Modal onClose={props.onClose}>
+        {cartItems}
+        <div className={classes.total}>
+          <span>Total Amount</span>
+          <span>{totalAmount}</span>
+        </div>
+        <div className={classes.actions}>
+          <button className={classes["button--alt"]} onClick={props.onClose}>
+            Close
+          </button>
+
+          {hasItems && (
+            <button className={classes.button} onClick={props.onClose}>
+              Order
+            </button>
+          )}
+        </div>
+      </Modal>
+    </React.Fragment>
   );
 };
 
